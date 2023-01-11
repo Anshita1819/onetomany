@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Index Page</h1>
+<a href="reg">App Management</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">address</th>
+      <th scope="col">salary</th>
+      <th scope="col">phone</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="e:${emp}">
+      <th th:text="${e.id}">1</th>
+      <td th:text="${e.name}"></td>
+      <td th:text="${e.address}"></td>
+      <td th:text="${e.salary}"></td>
+      <td th:text="${e.phone}"></td>
+      <td> <a th:href="@{/edit/{id}(id=${e.id})}">Edit</a></td>
+    </tr>
+   
+  </tbody>
+</table>
+
+</body>
+</html>
